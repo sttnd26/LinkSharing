@@ -11,13 +11,6 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class HomeController {
 
-//	@RequestMapping(value = "/", method = RequestMethod.GET)
-//	public String printWelcome(ModelMap model) {
-//
-//		model.addAttribute("message", "Spring 3 MVC Hello World");
-//		return "index";
-//
-//	}
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView hello() {
 
@@ -28,38 +21,17 @@ public class HomeController {
 
 	}
 
-	@ResponseBody
+
 	@RequestMapping("/login")
-	String login() {
-		return "Login pg.";
+	ModelAndView login() {
+		ModelAndView view1 = new ModelAndView("login");
+		return view1;
 	}
 
 	@RequestMapping("/register")
 	ModelAndView register() {
-		ModelAndView modelAndView = new ModelAndView("register");
-		return modelAndView;
+		ModelAndView view2 = new ModelAndView("register");
+		return view2;
 	}
 
-	//	@RequestMapping(value = "/login", method = RequestMethod.GET)
-//	public ModelAndView hello(@PathVariable("name") String name) {
-//
-//		ModelAndView model = new ModelAndView();
-//		model.setViewName("hello");
-//		model.addObject("msg", name);
-//
-//		return model;
-//
-//	}
-//
-//
-//	@RequestMapping(value = "/register", method = RequestMethod.GET)
-//	public ModelAndView register(@PathVariable("name") String name) {
-//
-//		ModelAndView model = new ModelAndView();
-//		model.setViewName("hello");
-//		model.addObject("msg", name);
-//
-//		return model;
-//
-//	}
 }

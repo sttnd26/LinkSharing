@@ -12,7 +12,7 @@
 <head>
 
     <!--For css, import:-->
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/homepage.css"/>                 <!--??-->
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/core/css/homepage.css"/>                 <!--??-->
 
     <!--For bootstrap, import:-->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -145,7 +145,7 @@
                             <li><a href="#" >Today</a></li>
                             <li><a href="#" >1 Week</a></li>
                             <li><a href="#" >1 Month</a></li>
-                            <li><a href="#" >i Year</a></li>
+                            <li><a href="#" >1 Year</a></li>
                         </ul>
                     </div>
                 </div>
