@@ -1,10 +1,6 @@
-package com.ttn.linksharing.model;
+package com.ttnd.linksharing;
 
-/**
- * Created by MAHE on 7/13/2017.
- */
-
-enum Visibility {
+public enum Visibility {
 
     PRIVATE,PUBLIC;
 

@@ -7,66 +7,137 @@
 	<version>1.0-SNAPSHOT</version>
 	<name>Link Sharing</name>
 
-	<properties>
-		<jdk.version>1.6</jdk.version>
-		<spring.version>3.2.13.RELEASE</spring.version>
-		<jstl.version>1.2</jstl.version>
-	</properties>
-
 	<dependencies>
+
+		<dependency> <groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version> </dependency>
+		<dependency> <groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>provided</scope>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-taglibs</artifactId>
+			<version>4.0.1.RELEASE</version>
+			<exclusions>
+				<exclusion>
+					<artifactId>spring-aop</artifactId>
+					<groupId>org.springframework</groupId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>4.3.9.RELEASE</version>
+		</dependency>
+
+
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate -->
+		<!--<dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate</artifactId>
+        <version>3.2.3.ga</version>
+
+        <exclusions>
+        <exclusion>
+        <artifactId>jta</artifactId>
+        <groupId>javax.transaction</groupId>
+        </exclusion>
+
+        </exclusions>
+        </dependency>
+        -->
+
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-orm</artifactId>
+			<version>3.0.3.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+		<dependency>
+			<groupId>dom4j</groupId>
+			<artifactId>dom4j</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.transaction</groupId>
+			<artifactId>jta</artifactId>
+			<version>1.1</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>${spring.version}</version>
+			<version>3.2.13.RELEASE</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>1.4</version>
 		</dependency>
 
 		<dependency>
-			<groupId>javax.servlet</groupId>
+			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
-			<version>${jstl.version}</version>
+			<version>1.2</version>
 		</dependency>
 
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>3.6.9.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>3.6.9.Final</version>
+		</dependency>
+
+		<!--<dependency>
+        <groupId>org.hibernate</groupId>
+        <artifactId>hibernate-core</artifactId>
+        <version>5.2.10.Final</version>
+        </dependency>-->
+
 	</dependencies>
-
 	<build>
-
+		<finalName>LinkSharing</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3</version>
 				<configuration>
-					<source>${jdk.version}</source>
-					<target>${jdk.version}</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
-
-			<plugin>
-				<groupId>org.eclipse.jetty</groupId>
-				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.2.11.v20150529</version>
-				<configuration>
-					<scanIntervalSeconds>10</scanIntervalSeconds>
-					<webApp>
-						<contextPath>/spring3</contextPath>
-					</webApp>
-				</configuration>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.9</version>
-				<configuration>
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<wtpContextName>spring3</wtpContextName>
-				</configuration>
-			</plugin>
-			
 		</plugins>
 	</build>
-
 </project>
