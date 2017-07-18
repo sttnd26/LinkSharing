@@ -5,6 +5,7 @@ import com.ttnd.linksharing.Visibility;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table
@@ -23,7 +24,7 @@ public class Topic {
     Date lastUpdated;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic", fetch = FetchType.LAZY)
-    ArrayList<Subscription> subscriptionList;
+    List<Subscription> subscriptionList;
 
 //    ArrayList<Resource> resourceList;
 
@@ -75,7 +76,7 @@ public class Topic {
         this.lastUpdated = lastUpdated;
     }
 
-    public ArrayList<Subscription> getSubscriptionList() {
+    public List<Subscription> getSubscriptionList() {
         return subscriptionList;
     }
 

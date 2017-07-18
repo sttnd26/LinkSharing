@@ -1,6 +1,7 @@
 package com.ttn.linksharing.dao;
 
 import com.ttn.linksharing.model.Topic;
+import org.springframework.stereotype.Repository;
 
 public interface TopicDao {
 

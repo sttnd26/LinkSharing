@@ -3,6 +3,7 @@ package com.ttn.linksharing.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table
@@ -25,9 +26,9 @@ public class User {
     Date lastUpdated;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
-    ArrayList<Subscription> subscriptionList;
+    List<Subscription> subscriptionList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "createdBy", fetch = FetchType.LAZY)
-    ArrayList<Topic> topicList;
+    List<Topic> topicList;
 
 //    ArrayList<ReadingItem> readingItemList;
     //Resource, ResourceRating
@@ -121,7 +122,7 @@ public class User {
         this.lastUpdated = lastUpdated;
     }
 
-    public ArrayList<Subscription> getSubscriptionList() {
+    public List<Subscription> getSubscriptionList() {
         return subscriptionList;
     }
 
@@ -129,7 +130,7 @@ public class User {
         this.subscriptionList = subscriptionList;
     }
 
-    public ArrayList<Topic> getTopicList() {
+    public List<Topic> getTopicList() {
         return topicList;
     }
 

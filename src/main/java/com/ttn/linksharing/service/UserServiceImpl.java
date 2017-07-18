@@ -1,6 +1,7 @@
 package com.ttn.linksharing.service;
 
 import com.ttn.linksharing.dao.UserDao;
+import com.ttn.linksharing.dao.UserDaoImpl;
 import com.ttn.linksharing.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class UserServiceImpl implements UserSevice{
 
     @Autowired
-    private UserDao userDao;
+    private UserDaoImpl userDao;
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
     public void addorUpdUser(User user) {

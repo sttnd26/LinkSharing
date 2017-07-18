@@ -8,21 +8,21 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-@Repository("userDao")
+@Repository
 public class UserDaoImpl implements UserDao{
 
     @Autowired
-    private SessionFactory sessionFactory;
+    private SessionFactory ourSessionFactory;
 
     public void addorUpdUser(User user) {
 
-        sessionFactory.getCurrentSession().saveOrUpdate(user);
+        ourSessionFactory.getCurrentSession().saveOrUpdate(user);
     }
 
 
     public User getUser(long userid) {
 
-        return (User) sessionFactory.getCurrentSession().get(User.class, userid);
+        return (User) ourSessionFactory.getCurrentSession().get(User.class, userid);
     }
 
 
