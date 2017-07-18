@@ -1,21 +1,22 @@
 package com.ttn.linksharing.service;
 
-import com.ttn.linksharing.dao.UserDao;
 import com.ttn.linksharing.dao.UserDaoImpl;
 import com.ttn.linksharing.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.multipart.MultipartFile;
 
-/**
- * Created by MAHE on 7/17/2017.
- */
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+
 
 @Service("userService")
 @Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 
-public class UserServiceImpl implements UserSevice{
+public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDaoImpl userDao;
@@ -27,6 +28,24 @@ public class UserServiceImpl implements UserSevice{
 
     public User getUser(long userid) {
         return userDao.getUser(userid);
+    }
+
+    public void setPicture( MultipartFile[] fileUpload, User user) throws IOException{
+
+        if (fileUpload != null && fileUpload.length > 0) {
+            for (MultipartFile file : fileUpload) {
+                System.out.println("Saving file: " + file.getOriginalFilename());
+                user.setPhoto(file.getBytes());
+            }
+//            System.out.println("length " + fileUpload.length);
+        }
+        else {
+            File file = new File("C:\\Users\\MAHE\\Desktop\\TTN\\LinkSharing\\src\\main\\webapp\\resources\\images\\default-img.png");
+            FileInputStream fis = new FileInputStream(file);
+            byte ph[] = new byte[(int) file.length()];
+            fis.read(ph);
+            user.setPhoto(ph);
+        }
     }
 
 }

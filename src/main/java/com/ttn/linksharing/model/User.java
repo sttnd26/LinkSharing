@@ -10,28 +10,30 @@ import java.util.List;
 public class User {
 
     @Id   @GeneratedValue(strategy = GenerationType.IDENTITY)
-    long userid;
+   private long userid;
 
     @Column(unique = true)
-    String email;
+    private String email;
     @Column(unique = true)
-    String username;
-    String password;
-    String firstName;
-    String lastName;
-    byte photo;
-    Boolean isAdmin;
-    Boolean isActive;
-    Date dateCreated;
-    Date lastUpdated;
+    private String username;
+    private String password;
+    private String firstName;
+    private String lastName;
+    @Transient
+    @Lob  @Column(columnDefinition = "LONGBLOB")
+    private byte[] photo;
+    private Boolean isAdmin=false;
+    private Boolean isActive=true;
+    private Date dateCreated=new Date();
+    private Date lastUpdated=new Date();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
-    List<Subscription> subscriptionList;
+     List<Subscription> subscriptionList;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "createdBy", fetch = FetchType.LAZY)
-    List<Topic> topicList;
+     List<Topic> topicList;
 
 //    ArrayList<ReadingItem> readingItemList;
-    //Resource, ResourceRating
+//   Resource, ResourceRating
 
 
     public long getUserid() {
@@ -82,14 +84,12 @@ public class User {
         this.lastName = lastName;
     }
 
-    public byte getPhoto() {
+    public byte[] getPhoto() {
         return photo;
     }
-
-    public void setPhoto(byte photo) {
+    public void setPhoto(byte[] photo) {
         this.photo = photo;
     }
-
     public Boolean getAdmin() {
         return isAdmin;
     }

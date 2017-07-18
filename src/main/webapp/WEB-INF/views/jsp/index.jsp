@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
 <!DOCTYPE html>
 <html>
 
@@ -68,7 +69,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="http://www.iconsfind.com/wp-content/uploads/2015/10/20151012_561baed03a54e.png";>
+                            <img class="pic-class" src="http://www.iconsfind.com/wp-content/uploads/2015/10/20151012_561baed03a54e.png">
                         </div>
 
                         <div class="col-md-10">
@@ -100,7 +101,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="http://www.iconsfind.com/wp-content/uploads/2015/10/20151012_561baed03a54e.png";>
+                            <img class="pic-class" src="resources/images/default-img.png";>
                         </div>
 
                         <div class="col-md-10">
@@ -152,7 +153,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="http://www.iconsfind.com/wp-content/uploads/2015/10/20151012_561baed03a54e.png";>
+                            <img class="pic-class" src="resources/images/default-img.png";>
                         </div>
 
                         <div class="col-md-10">
@@ -214,44 +215,44 @@
                 </div>
 
                 <div class="panel-body">
-                    <form method="get" action="/register.html">
+                    <form method="post" action="/register" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label for="usrf">First Name:*</label>
-                            <input type="text" class="form-control" id="usrf" style="border-color:black">
+                            <label>First Name:*</label>
+                            <input type="text" class="form-control" name="firstName" style="border-color:black">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="usrl">Last Name:*</label>
-                            <input type="text" class="form-control" id="usrl" style="border-color:black">
+                            <label>Last Name:*</label>
+                            <input type="text" class="form-control" name="lastName" style="border-color:black">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="usre">Email:*</label>
-                            <input type="text" class="form-control" id="usre" style="border-color:black">
+                            <label>Email:*</label>
+                            <input type="text" class="form-control" name="email" style="border-color:black">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="usrregister">Userame:*</label>
-                            <input type="text" class="form-control" id="usrregister" style="border-color:black">
+                            <label>Username:*</label>
+                            <input type="text" class="form-control" name="username" style="border-color:black">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="pwdregister">Password:*</label>
-                            <input type="password" class="form-control" id="pwdregister" style="border-color:black">
+                            <label>Password:*</label>
+                            <input type="password" class="form-control" name="password" style="border-color:black">
                         </div>
                         <br>
                         <div class="form-group">
-                            <label for="cpwd">Confirm Password:*</label>
-                            <input type="password" class="form-control" id="cpwd" style="border-color:black">
+                            <label>Confirm Password:*</label>
+                            <input type="password" class="form-control" name="confirmpwd" style="border-color:black">
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Photo:</label>
 
-                            <span class="input-group-btn">
-                            <button class="browse btn" type="button" style="border-color:black">
-                            Browse</button>
-                        <input type="text" class="form-control" style="border-color:black"></span>
+                            <%--<span class="input-group-btn">--%>
+                            <%--<button class="browse btn" type="button" style="border-color:black">--%>
+                            <%--Browse</button>--%>
+                        <input type="file" name="file" class="form-control" style="border-color:black">
                         </div>
                         <input type="submit" class="btn" style="border-color: #333;" value="Register"/>
                     </form>
@@ -264,3 +265,11 @@
 </html>
 
 
+<%--<div class="form-group">--%>
+    <%--<label class="col-sm-3 control-label">Photo:</label>--%>
+    <%--<div class=" col-md-9 ">--%>
+        <%--<label class="control-label">Browse</label>--%>
+        <%--<input id="input-1" type="file" name="file" class="file">--%>
+
+    <%--</div>--%>
+<%--</div>--%>

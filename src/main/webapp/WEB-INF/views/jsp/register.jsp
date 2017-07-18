@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    <h1>Register pg.</h1>
+    ${user.username} ${user.password}
 </body>
 </html>
