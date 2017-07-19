@@ -15,6 +15,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--For bootstrap validator, import:-->
+    <script src="http://1000hz.github.io/bootstrap-validator/dist/validator.min.js"></script>
+
 
     <!--For icons, import:-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -215,8 +218,9 @@
                     Register
                 </div>
 
+
                 <div class="panel-body">
-                    <form:form method="post" action="/register" enctype="multipart/form-data" modelAttribute="user">
+                    <form:form role="form" method="post" action="/register" data-toggle="validator" enctype="multipart/form-data" modelAttribute="user">
                         <div class="form-group">
                             <label>First Name:*</label>
                             <input type="text" class="form-control" name="firstName" style="border-color:black">
@@ -243,13 +247,15 @@
                         <br>
                         <div class="form-group">
                             <label>Password:*</label>
-                            <form:password path="password" class="form-control" name="password" style="border-color:black"/>
+                            <form:password path="password" class="form-control" name="password" id="inputPassword" style="border-color:black"/>
                             <form:errors path="password" cssClass="error"/>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Confirm Password:*</label>
-                            <input type="password" class="form-control" name="confirmpwd" style="border-color:black">
+                            <input type="password" class="form-control" name="confirmpwd" style="border-color:black"
+                            data-match="#inputPassword" data-match-error="Password does not match">
+                            <div class="help-block with-errors"></div>
                         </div>
                         <br>
                         <div class="form-group">
@@ -270,3 +276,4 @@
 </body>
 </html>
 
+z

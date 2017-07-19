@@ -46,7 +46,6 @@ public class HomeController {
 
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
-
 	ModelAndView register(@ModelAttribute("user") @Valid User user, BindingResult bindingResult,
 					   @RequestParam("file") MultipartFile[] fileUpload, MultipartHttpServletRequest request) {
 

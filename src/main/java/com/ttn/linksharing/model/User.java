@@ -1,10 +1,9 @@
 package com.ttn.linksharing.model;
 
 import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-//import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.Date;
@@ -17,17 +16,17 @@ public class User {
     @Id   @GeneratedValue(strategy = GenerationType.IDENTITY)
    private long userid;
 
-    @NotNull(message = "Required field")
+    @NotEmpty(message = "Required field")
     @Email(message = "Please enter a valid email")
     private String email;
-    @NotNull(message = "Required field")
+    @NotEmpty(message = "Required field")
     private String username;
-    @NotNull(message = "Required field")
+    @NotEmpty(message = "Required field")
     @Size(min = 6, max = 15, message = "Password must be of 6 - 15 characters")
     private String password;
-    @NotNull(message = "Required field")
+    @NotEmpty(message = "Required field")
     private String firstName;
-    @NotNull(message = "Required field")
+    @NotEmpty(message = "Required field")
     private String lastName;
     @Transient
     @Lob  @Column(columnDefinition = "LONGBLOB")
