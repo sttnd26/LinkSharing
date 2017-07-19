@@ -1,11 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: MAHE
-  Date: 7/9/2017
-  Time: 4:56 PM
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -23,6 +18,12 @@
 
     <!--For icons, import:-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .error {
+            color: red; font-style: italic;
+        }
+    </style>
 
 </head>
 <body>
@@ -69,7 +70,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="http://www.iconsfind.com/wp-content/uploads/2015/10/20151012_561baed03a54e.png">
+                            <img class="pic-class" src="resources/images/default-img.png">
                         </div>
 
                         <div class="col-md-10">
@@ -101,7 +102,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="resources/images/default-img.png";>
+                            <img class="pic-class" src="resources/images/default-img.png">
                         </div>
 
                         <div class="col-md-10">
@@ -191,7 +192,7 @@
                 </div>
 
                 <div class="panel-body">
-                    <form method="get" action="/login.html">
+                    <form method="get" action="/login">
                         <div class="form-group">
                             <label for="usrlogin">Email/Userame:*</label>
                             <input type="text" class="form-control" id="usrlogin" style="border-color:black">
@@ -215,30 +216,35 @@
                 </div>
 
                 <div class="panel-body">
-                    <form method="post" action="/register" enctype="multipart/form-data">
+                    <form:form method="post" action="/register" enctype="multipart/form-data" modelAttribute="user">
                         <div class="form-group">
                             <label>First Name:*</label>
                             <input type="text" class="form-control" name="firstName" style="border-color:black">
+                            <form:errors path="firstName" cssClass="error"/>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Last Name:*</label>
                             <input type="text" class="form-control" name="lastName" style="border-color:black">
+                            <form:errors path="lastName" cssClass="error"/>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Email:*</label>
                             <input type="text" class="form-control" name="email" style="border-color:black">
+                            <form:errors path="email" cssClass="error"/>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Username:*</label>
                             <input type="text" class="form-control" name="username" style="border-color:black">
+                            <form:errors path="username" cssClass="error"/>
                         </div>
                         <br>
                         <div class="form-group">
                             <label>Password:*</label>
-                            <input type="password" class="form-control" name="password" style="border-color:black">
+                            <form:password path="password" class="form-control" name="password" style="border-color:black"/>
+                            <form:errors path="password" cssClass="error"/>
                         </div>
                         <br>
                         <div class="form-group">
@@ -255,7 +261,7 @@
                         <input type="file" name="file" class="form-control" style="border-color:black">
                         </div>
                         <input type="submit" class="btn" style="border-color: #333;" value="Register"/>
-                    </form>
+                    </form:form>
                 </div>
             </div>
         </div>
@@ -264,12 +270,3 @@
 </body>
 </html>
 
-
-<%--<div class="form-group">--%>
-    <%--<label class="col-sm-3 control-label">Photo:</label>--%>
-    <%--<div class=" col-md-9 ">--%>
-        <%--<label class="control-label">Browse</label>--%>
-        <%--<input id="input-1" type="file" name="file" class="file">--%>
-
-    <%--</div>--%>
-<%--</div>--%>
