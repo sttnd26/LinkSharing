@@ -5,22 +5,22 @@ import com.ttn.linksharing.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.validation.Valid;
-import java.io.IOException;
 
 @Controller
 public class HomeController {
 
 	@Autowired
 	private UserService userService;
+	private User user;
 
 	@ModelAttribute
 	void addingObject(Model model)
@@ -32,25 +32,42 @@ public class HomeController {
 	public ModelAndView hello() {
 
 		ModelAndView model = new ModelAndView();
-		model.setViewName("index");
+		model.setViewName("homepg");
 
 		return model;
 
 	}
 
-	@RequestMapping("/login")
-	ModelAndView login() {
-		ModelAndView view = new ModelAndView("login");
-		return view;
+	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	ModelAndView login(@RequestParam("username") String name, @RequestParam("password") String pwd, HttpServletRequest request)  {
+
+		HttpSession session = request.getSession();
+
+		ModelAndView modelAndView = new ModelAndView();
+
+		user = userService.getUserByUsernamePassword(name, pwd);
+		if (user != null) {
+			if (name.equals(user.getUsername())) {
+				session.setAttribute("UserDetails", user);
+				modelAndView.setViewName("dashboard");
+			}
+		}
+		else {
+			modelAndView.setViewName("homepg");
+			modelAndView.addObject("errormsg","*Wrong Username/Password");
+		}
+		return modelAndView;
 	}
 
 
 	@RequestMapping(value = "/register", method = RequestMethod.POST)
 	ModelAndView register(@ModelAttribute("user") @Valid User user, BindingResult bindingResult,
-					   @RequestParam("file") MultipartFile[] fileUpload, MultipartHttpServletRequest request) {
+					   @RequestParam("file") MultipartFile[] fileUpload, HttpServletRequest request) {
+
+		HttpSession session = request.getSession();
 
 		if (bindingResult.hasErrors()) {
-			ModelAndView modelrep = new ModelAndView("index");
+			ModelAndView modelrep = new ModelAndView("homepg");
 			return modelrep;
 		}
 
@@ -63,7 +80,8 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView();
 		userService.addorUpdUser(user);
 
-		modelAndView.setViewName("register");
+		session.setAttribute("UserDetails", user);
+		modelAndView.setViewName("dashboard");
 		return modelAndView;
 	}
 

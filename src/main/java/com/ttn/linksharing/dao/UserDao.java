@@ -11,4 +11,6 @@ public interface UserDao {
 
  User getUser(long userid);
 
+ User getUserByUsernamePassword(String name, String pwd);
+
 }

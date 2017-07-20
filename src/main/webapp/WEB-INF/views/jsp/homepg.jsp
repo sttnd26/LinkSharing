@@ -1,6 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 
 <!DOCTYPE html>
 <html>
@@ -29,32 +27,17 @@
     </style>
 
 </head>
+
 <body>
 
 <!--Top part of page-->
 <div class="top-box-border">
-    <nav class="navbar" style="border: 2px solid; border-radius: 10px;">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="www.google.co.in">Link Sharing</a>
-            </div>
-
-            <ul class="navbar-form navbar-right">
-                <div class="input-group">
-                    <em>
-                        <input type="text" class="form-control" placeholder="Search" style="border-color:black">
-                        <div class="input-group-btn">
-                            <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                        </div>
-                    </em>
-                </div>
-            </ul>
-        </div>
-    </nav>
+    <%@include file="homepgheader.jsp" %>
 </div>
 
 
 <br>
+<h5 style="color: red">${errormsg}</h5>
 <br>
 
 
@@ -73,7 +56,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="resources/images/default-img.png">
+                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg">
                         </div>
 
                         <div class="col-md-10">
@@ -105,7 +88,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="resources/images/default-img.png">
+                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg">
                         </div>
 
                         <div class="col-md-10">
@@ -157,7 +140,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="resources/images/default-img.png";>
+                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg";>
                         </div>
 
                         <div class="col-md-10">
@@ -188,87 +171,12 @@
         </div>
         <div class="col-md-4">
 
-            <!--Coding for "Login" panel-->
             <div class="panel panel-default" style="width:400px; border-color: #333;">
-                <div class="panel-heading" style="border-color:black">
-                    Login
-                </div>
-
-                <div class="panel-body">
-                    <form method="get" action="/login">
-                        <div class="form-group">
-                            <label for="usrlogin">Email/Userame:*</label>
-                            <input type="text" class="form-control" id="usrlogin" style="border-color:black">
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label for="pwdlogin">Password:*</label>
-                            <input type="password" class="form-control" id="pwdlogin" style="border-color:black">
-                        </div>
-
-                        <a href="www.gmail.com">Forgot Password</a>
-                        <input type="submit" class="btn" style="border-color: #333;" value="Login"/>
-                    </form>
-                </div>
+                <%@include file="login.jsp" %>
             </div>
 
-            <!--Coding for "Register" panel-->
             <div class="panel panel-default" style="width:400px; border-color: #333;">
-                <div class="panel-heading" style="border-color:black">
-                    Register
-                </div>
-
-
-                <div class="panel-body">
-                    <form:form role="form" method="post" action="/register" data-toggle="validator" enctype="multipart/form-data" modelAttribute="user">
-                        <div class="form-group">
-                            <label>First Name:*</label>
-                            <input type="text" class="form-control" name="firstName" style="border-color:black">
-                            <form:errors path="firstName" cssClass="error"/>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Last Name:*</label>
-                            <input type="text" class="form-control" name="lastName" style="border-color:black">
-                            <form:errors path="lastName" cssClass="error"/>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Email:*</label>
-                            <input type="text" class="form-control" name="email" style="border-color:black">
-                            <form:errors path="email" cssClass="error"/>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Username:*</label>
-                            <input type="text" class="form-control" name="username" style="border-color:black">
-                            <form:errors path="username" cssClass="error"/>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Password:*</label>
-                            <form:password path="password" class="form-control" name="password" id="inputPassword" style="border-color:black"/>
-                            <form:errors path="password" cssClass="error"/>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Confirm Password:*</label>
-                            <input type="password" class="form-control" name="confirmpwd" style="border-color:black"
-                            data-match="#inputPassword" data-match-error="Password does not match">
-                            <div class="help-block with-errors"></div>
-                        </div>
-                        <br>
-                        <div class="form-group">
-                            <label>Photo:</label>
-
-                            <%--<span class="input-group-btn">--%>
-                            <%--<button class="browse btn" type="button" style="border-color:black">--%>
-                            <%--Browse</button>--%>
-                        <input type="file" name="file" class="form-control" style="border-color:black">
-                        </div>
-                        <input type="submit" class="btn" style="border-color: #333;" value="Register"/>
-                    </form:form>
-                </div>
+                <%@include file="register.jsp" %>
             </div>
         </div>
     </div>
@@ -276,4 +184,3 @@
 </body>
 </html>
 
-z

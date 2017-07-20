@@ -1,0 +1,27 @@
+.bottom-part{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+.form-control{
+    /* float: right; */
+    max-width: 60%;
+}
+.btn{
+    float: right;
+}
+.pic-class{
+    width:80px;
+    height:80px;
+    border: ridge;
+    border-color: gray;
+}
+.dropdown{
+    float: right;
+}
+.panel-body{
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.panel-default {
+    border-color: #333;
+}

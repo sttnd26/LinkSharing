@@ -30,6 +30,10 @@ public class UserServiceImpl implements UserService {
         return userDao.getUser(userid);
     }
 
+    public User getUserByUsernamePassword(String name, String pwd) {
+        return userDao.getUserByUsernamePassword(name, pwd);
+    }
+
     public void setPicture( MultipartFile[] fileUpload, User user) throws IOException{
 
         if (fileUpload != null && fileUpload.length > 0) {

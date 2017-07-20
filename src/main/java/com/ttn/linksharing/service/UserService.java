@@ -12,5 +12,7 @@ public interface UserService {
 
     User getUser(long userid);
 
+    User getUserByUsernamePassword(String name, String pwd);
+
     void setPicture( MultipartFile[] fileUpload, User user) throws IOException;
 }
