@@ -53,17 +53,18 @@
                         </div>
 
                         <div class="col-md-10">
-                            <a href="#">Uday Pratap Singh </a>
+                            <strong style="font-size: x-large"><%=user.getFirstName()+" "+user.getLastName()%> </strong>
                             <table>
                                 <tr>
                                     <td>
-                                        <font size=2px> @uday </font>
+                                        <font size=2px class="text-muted">@<%=user.getUsername()%></font>
                                     </td>
                                 </tr>
                                 <tr>
                                     <td>
                                         <font size=2px> Subscriptions</font>
                                     </td>
+                                    <td>&nbsp;</td>
                                     <td>
                                         <font size=2px> Topics</font>
 
@@ -71,10 +72,10 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <font size=2px style="color:blue"> 50</font>
+                                        <font size=2px style="color:blue"> ${user.subscriptionList.size()}</font>
                                     </td>
                                     <td>
-                                        <font size=2px style="color:blue"> 30</font>
+                                        <font size=2px style="color:blue"> ${user.topicList.size()}</font>
                                     </td>
                                 </tr>
                             </table>
@@ -101,12 +102,13 @@
                             <table style="border-spacing:5%;">
                                 <tr>
                                     <td>
-                                        <font size=2px> @uday</font>
+                                        <font size=2px class="text-muted"> @uday</font>
                                     </td>
 
                                     <td>
                                         <font size=2px> Subscriptions</font>
                                     </td>
+                                    <td>&nbsp;</td>
                                     <td>
                                         <font size=2px> Posts</font>
 
@@ -155,12 +157,13 @@
                             <table style="border-spacing:5%;">
                                 <tr>
                                     <td>
-                                        <font size=2px> @uday </font>
+                                        <font size=2px class="text-muted"> @uday </font>
                                     </td>
 
                                     <td>
                                         <font size=2px> Subscriptions</font>
                                     </td>
+                                    <td>&nbsp;</td>
                                     <td>
                                         <font size=2px> Posts</font>
 
@@ -205,12 +208,13 @@
                             <table style="border-spacing: 5%;">
                                 <tr>
                                     <td>
-                                        <font size=2px> @uday</font>
+                                        <font size=2px class="text-muted"> @uday</font>
                                     </td>
 
                                     <td>
                                         <font size=2px> Subscriptions</font>
                                     </td>
+                                    <td>&nbsp;</td>
                                     <td>
                                         <font size=2px> Posts</font>
 
@@ -246,12 +250,13 @@
                             <table style="border-spacing:5%;">
                                 <tr>
                                     <td>
-                                        <font size=2px> @uday</font>
+                                        <font size=2px class="text-muted"> @uday</font>
                                     </td>
 
                                     <td>
                                         <font size=2px> Subscriptions</font>
                                     </td>
+                                    <td>&nbsp;</td>
                                     <td>
                                         <font size=2px> Posts</font>
 
@@ -333,8 +338,8 @@
                         </div>
 
                         <div class="col-md-10">
-                            <a href="#">Uday Pratap Singh </a>
-
+                            <font size=2px>Uday Pratap Singh </font>
+                            <font size=2px class="text-muted"> @uday </font>
                             <p>
                                 To group many panels together, wrap a with class .panel-group a
                                 round them. The .panel-group class clears the bottom-margin of each
@@ -367,8 +372,8 @@
                         </div>
 
                         <div class="col-md-10">
-                            <a href="#">Uday Pratap Singh </a>
-
+                            <font size=2px>Uday Pratap Singh </font>
+                            <font size=2px class="text-muted"> @uday 5 min</font>
                             <p>
                                 To group many panels together, wrap a with class .panel-group a
                                 round them. The .panel-group class clears the bottom-margin of each
