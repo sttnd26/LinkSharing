@@ -14,8 +14,8 @@ import java.io.IOException;
 
 
 @Service("userService")
-@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 
+@Transactional(propagation = Propagation.SUPPORTS, readOnly = true)
 public class UserServiceImpl implements UserService {
 
     @Autowired

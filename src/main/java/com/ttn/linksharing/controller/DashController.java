@@ -1,8 +1,15 @@
 package com.ttn.linksharing.controller;
 
+import com.ttn.linksharing.model.Topic;
 import com.ttn.linksharing.model.User;
+import com.ttn.linksharing.service.TopicService;
+import com.ttn.linksharing.service.TopicServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,14 +19,31 @@ import java.io.IOException;
 @Controller
 public class DashController {
 
+    @Autowired
+    private TopicServiceImpl topicService;
     private User user;
 
     @RequestMapping(value = "/getPhoto")
     public void getPhoto(HttpServletRequest request, HttpServletResponse response) throws IOException {
         HttpSession session = request.getSession();
         user = (User) session.getAttribute("UserDetails");
-        System.out.println("Photo of user: " + user.getFirstName());
+//        System.out.println("Photo of user: " + user.getFirstName());
         byte[] arr = user.getPhoto();
         response.getOutputStream().write(arr);
     }
+
+    @RequestMapping(value = "/createtopic", method = RequestMethod.POST)
+    ModelAndView createtopic(@ModelAttribute Topic topic, HttpServletRequest request) {
+        ModelAndView model = new ModelAndView();
+        topicService.addorUpdTopic(topic, request);
+        model.setViewName("dashboard");
+        return model;
+    }
+
+    @RequestMapping(value = "/logout", method=RequestMethod.GET)
+        public String logout(HttpSession session) {
+            session.invalidate();
+            return "redirect:/homepg";
+    }
+    
 }

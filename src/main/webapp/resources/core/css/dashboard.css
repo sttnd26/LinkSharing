@@ -18,6 +18,10 @@ a:link{
     border: ridge;
     border-color: gray;
 }
+#dp {
+    width: 120px;
+    height: 90px;
+}
 .dropdown{
     float: right;
 }

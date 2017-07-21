@@ -38,7 +38,7 @@ public class User {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "user", fetch = FetchType.LAZY)
      List<Subscription> subscriptionList;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "createdBy", fetch = FetchType.LAZY)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "createdBy", fetch = FetchType.EAGER)
      List<Topic> topicList;
 
 //    ArrayList<ReadingItem> readingItemList;

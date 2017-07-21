@@ -20,8 +20,8 @@ public class Topic {
     @ManyToOne
     User createdBy;
 
-    Date dateCreated;
-    Date lastUpdated;
+    Date dateCreated=new Date();
+    Date lastUpdated=new Date();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "topic", fetch = FetchType.LAZY)
     List<Subscription> subscriptionList;
