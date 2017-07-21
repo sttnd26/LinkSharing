@@ -56,7 +56,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg">
+                            <img class="pic-class" src="/resources/images/default-img.jpg">
                         </div>
 
                         <div class="col-md-10">
@@ -70,13 +70,13 @@
                                 panel: To group many panels together, wrap a with class .panel-group
                                 around them. The .panel-group class clears the bottom.
                             </p>
-                            <a href="www.facebook.com">
+                            <a href="https://www.facebook.com">
                                 <i class="fa fa-facebook-square" style="font-size:20px"></i>
                             </a>
-                            <a href="www.twitter.com">
+                            <a href="https://www.twitter.com">
                                 <i class="fa fa-twitter" style="font-size:20px"></i>
                             </a>
-                            <a href="www.plus.google.com">
+                            <a href="https://www.plus.google.com">
                                 <i class="fa fa-google-plus" style="font-size:20px" ></i>
                             </a>
                             <a href="#" style="float: right; padding-right:5%;">View Post</a>
@@ -88,7 +88,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg">
+                            <img class="pic-class" src="/resources/images/default-img.jpg">
                         </div>
 
                         <div class="col-md-10">
@@ -102,13 +102,13 @@
                                 panel: To group many panels together, wrap a with class .panel-group
                                 around them. The .panel-group class clears the bottom.
                             </p>
-                            <a href="www.facebook.com">
+                            <a href="https://www.facebook.com">
                                 <i class="fa fa-facebook-square" style="font-size:20px"></i>
                             </a>
-                            <a href="www.twitter.com">
+                            <a href="https://www.twitter.com">
                                 <i class="fa fa-twitter" style="font-size:20px"></i>
                             </a>
-                            <a href="www.plus.google.com">
+                            <a href="https://www.plus.google.com">
                                 <i class="fa fa-google-plus" style="font-size:20px" ></i>
                             </a>
                             <a href="#" style="float: right; padding-right:5%;">View Post</a>
@@ -140,7 +140,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg";>
+                            <img class="pic-class" src="/resources/images/default-img.jpg">
                         </div>
 
                         <div class="col-md-10">
@@ -154,13 +154,13 @@
                                 panel: To group many panels together, wrap a with class .panel-group
                                 around them. The .panel-group class clears the bottom.
                             </p>
-                            <a href="www.facebook.com">
+                            <a href="https://www.facebook.com">
                                 <i class="fa fa-facebook-square" style="font-size:20px"></i>
                             </a>
-                            <a href="www.twitter.com">
+                            <a href="https://www.twitter.com">
                                 <i class="fa fa-twitter" style="font-size:20px"></i>
                             </a>
-                            <a href="www.plus.google.com">
+                            <a href="https://www.plus.google.com">
                                 <i class="fa fa-google-plus" style="font-size:20px" ></i>
                             </a>
                             <a href="#" style="float: right; padding-right:5%;">View Post</a>

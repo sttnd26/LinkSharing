@@ -48,11 +48,12 @@ public class DashController {
         return model;
     }
 
-    @RequestMapping(value = "/displaytopics", method = RequestMethod.GET)
-     @ResponseBody
-    String displaytopics() {
-
-        String result = "Topics: "+user.getTopicList();
+        @RequestMapping(value = "/displaytopics", method = RequestMethod.GET)
+        @ResponseBody
+        String displaytopics(HttpServletRequest request) {
+            HttpSession session = request.getSession();
+            user = (User) session.getAttribute("UserDetails");
+        String result = "<b>TOPICS: </b><br><p>"+user.getTopicList()+"</p>";
 
         return result;
     }

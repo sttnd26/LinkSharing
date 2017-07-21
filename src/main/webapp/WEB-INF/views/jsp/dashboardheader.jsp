@@ -11,7 +11,7 @@
 <nav class="navbar" style="border: 2px solid; border-radius: 10px;">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="www.google.co.in">Link Sharing</a>
+            <a class="navbar-brand" href="#">Link Sharing</a>
         </div>
 
         <span class="navbar-form navbar-right">
@@ -49,6 +49,7 @@ function chgAction(){
     $('#selform').submit();
 }
 </script>
+
       </span>
     </div>
 </nav>

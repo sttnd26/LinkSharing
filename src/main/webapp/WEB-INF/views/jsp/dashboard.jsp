@@ -24,6 +24,19 @@
     <!--For icons, import:-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+    <script type="text/javascript"
+            src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+    <script type="text/javascript">
+        function doAjax() {
+            $.ajax({
+                url : 'displaytopics.html',
+                success : function(data) {
+                    $('#result').html(data);
+                }
+            });
+        }
+    </script>
   </head>
 
 <body>
@@ -53,7 +66,7 @@
                             <img class="pic-class" id="dp" src="/getPhoto">
                             <% }
                             else {%>
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg">
+                            <img class="pic-class" src="/resources/images/default-img.jpg">
                             <% } %>
                         </div>
 
@@ -71,8 +84,9 @@
                                     </td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td>
-                                        <a href="/displaytopics" onclick="return doAjax();"><font size=2px> Topics</font></a>
-
+                                        <a onclick="return doAjax();" style="text-decoration: none;">
+                                            <font size=2px> Topics</font>
+                                        </a>
                                     </td>
                                 </tr>
                                 <tr>
@@ -91,8 +105,6 @@
                                         <font size=2px style="color:blue"> 0 </font>
                                     </td>
                                     <% } %>
-
-
                                 </tr>
                             </table>
                         </div>
@@ -100,298 +112,33 @@
                     </div>
                 </div>
             </div>
+
             <!--Coding for "Subscriptions" panel here-->
             <div class="panel panel-default" style="border-color:black">
-                <div class="panel-heading" style="border-color:black">
-                    Subscriptions
-
-                    <a href="#" style="float:right">View All</a>
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg";>
-                        </div>
-
-                        <div class="col-md-10">
-                            <a href="#"> Grails</a>
-                            <table style="border-spacing:5%;">
-                                <tr>
-                                    <td>
-                                        <font size=2px class="text-muted"> @uday</font>
-                                    </td>
-
-                                    <td>
-                                        <font size=2px> Subscriptions</font>
-                                    </td>
-                                    <td>&nbsp;</td>
-                                    <td>
-                                        <font size=2px> Posts</font>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#"><font size=2px style="color:blue"> Unsubscribe</font></a>
-                                    </td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 50</font>
-                                    </td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 30</font>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            <select>
-                                <option>Serious</option>
-                            </select>
-                            &nbsp;&nbsp;
-                            <select>
-                                <option>Private</option>
-                                <option>Delete</option>
-                                <option>Edit</option>
-                            </select>
-                            &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-envelope"></span>
-                            &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-edit"></span>
-                            &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg";>
-                        </div>
-
-                        <div class="col-md-10">
-                            <a href="#"> Grails</a>
-                            <table style="border-spacing:5%;">
-                                <tr>
-                                    <td>
-                                        <font size=2px class="text-muted"> @uday </font>
-                                    </td>
-
-                                    <td>
-                                        <font size=2px> Subscriptions</font>
-                                    </td>
-                                    <td>&nbsp;</td>
-                                    <td>
-                                        <font size=2px> Posts</font>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#"><font size=2px style="color:blue"> Unsubscribe</font></a>
-                                    </td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 50</font>
-                                    </td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 30</font>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            <select>
-                                <option>Serious</option>
-                            </select>
-                            &nbsp;&nbsp;
-                            <a class="glyphicon glyphicon-envelope" data-toggle="modal" data-target="#emailModal"></a>
-                        </div>
-                    </div>
-                </div>
+                <%@include file="subscriptions.jsp" %>
             </div>
 
             <!-- Coding for Trending Topics -->
             <div class="panel panel-default" style="border-color:black">
-                <div class="panel-heading" style="border-color:black">
-                    Trending Topics
-                </div>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg";>
-                        </div>
-
-                        <div class="col-md-10">
-                            <a href="#"> Grails</a>
-                            <table style="border-spacing: 5%;">
-                                <tr>
-                                    <td>
-                                        <font size=2px class="text-muted"> @uday</font>
-                                    </td>
-
-                                    <td>
-                                        <font size=2px> Subscriptions</font>
-                                    </td>
-                                    <td>&nbsp;</td>
-                                    <td>
-                                        <font size=2px> Posts</font>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#"><font size=2px style="color:blue"> Unsubscribe</font></a>
-                                    </td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 50</font>
-                                    </td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 30</font>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg">
-                        </div>
-
-                        <div class="col-md-10">
-                            <input type="text" placeholder="Grails">
-                            <button type="submit">Save</button>
-                            <button type="reset">Cancel</button>
-                            <br><br>
-                            <table style="border-spacing:5%;">
-                                <tr>
-                                    <td>
-                                        <font size=2px class="text-muted"> @uday</font>
-                                    </td>
-
-                                    <td>
-                                        <font size=2px> Subscriptions</font>
-                                    </td>
-                                    <td>&nbsp;</td>
-                                    <td>
-                                        <font size=2px> Posts</font>
-
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a href="#"><font size=2px style="color:blue"> Unsubscribe</font></a>
-                                    </td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 50</font>
-                                    </td>
-                                    <td>&nbsp;&nbsp;</td>
-                                    <td>
-                                        <font size=2px style="color:blue"> 30</font>
-                                    </td>
-                                </tr>
-                            </table>
-                            <br>
-                            <select>
-                                <option>Serious</option>
-                            </select>
-                            &nbsp;&nbsp;
-                            <select>
-                                <option>Private</option>
-                                <option>Delete</option>
-                                <option>Edit</option>
-                            </select>
-                            &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-envelope"></span>
-                            &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-edit"></span>
-                            &nbsp;&nbsp;
-                            <span class="glyphicon glyphicon-trash"></span>
-                        </div>
-                    </div>
-                </div>
+                <%@include file="trendingtopics.jsp" %>
             </div>
 
         </div>
 
         <div class="col-md-6">
-            <!--Coding for the panel "Recent shares" from here-->
+            <!--Coding for the panel "Inbox" from here-->
             <div class="panel panel-default" style="border-color:black">
-                <div class="panel-heading" style="border-color:black">
-                    Inbox
-                </div>
+                <%@include file="inbox.jsp" %>
+            </div>
+
+            <%--Ajax part--%>
+            <div class="panel panel-default" style="border-color:black">
                 <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg";>
-                        </div>
-
-                        <div class="col-md-10">
-                            <font size=2px>Uday Pratap Singh </font>
-                            <font size=2px class="text-muted"> @uday </font>
-                            <p>
-                                To group many panels together, wrap a with class .panel-group a
-                                round them. The .panel-group class clears the bottom-margin of each
-                                panel: To group many panels together, wrap a with class
-                            </p>
-                            <a href="www.facebook.com">
-                                <i class="fa fa-facebook-square" style="font-size:20px"></i>
-                            </a>
-                            <a href="www.twitter.com">
-                                <i class="fa fa-twitter" style="font-size:20px"></i>
-                            </a>
-                            <a href="www.plus.google.com">
-                                <i class="fa fa-google-plus" style="font-size:20px" ></i>
-                            </a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#">Download</a>&nbsp;
-                            <a href="#">View Full Site</a>&nbsp;
-                            <a href="#">Mark as read</a>&nbsp;
-                            <a href="#">View Post</a>
-                        </div>
-
-                    </div>
-                </div>
-                <br>
-                <div class="panel-body">
-                    <div class="row">
-                        <div class="col-md-2">
-                            <img class="pic-class" src="http://weekendwarriors.se/assets/img/defaultavatar.jpg";>
-                        </div>
-
-                        <div class="col-md-10">
-                            <font size=2px>Uday Pratap Singh </font>
-                            <font size=2px class="text-muted"> @uday 5 min</font>
-                            <p>
-                                To group many panels together, wrap a with class .panel-group a
-                                round them. The .panel-group class clears the bottom-margin of each
-                                panel: To group many panels together, wrap a with class
-                            </p>
-                            <a href="www.facebook.com">
-                                <i class="fa fa-facebook-square" style="font-size:20px"></i>
-                            </a>
-                            <a href="www.twitter.com">
-                                <i class="fa fa-twitter" style="font-size:20px"></i>
-                            </a>
-                            <a href="www.plus.google.com">
-                                <i class="fa fa-google-plus" style="font-size:20px" ></i>
-                            </a>
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            <a href="#">Download</a>&nbsp;
-                            <a href="#">View Full Site</a>&nbsp;
-                            <a href="#">Mark as read</a>&nbsp;
-                            <a href="#">View Post</a>
-                        </div>
-
-                    </div>
+                    <div id="result"></div>
                 </div>
             </div>
 
+            <%--MODALS--%>
 
             <!--Coding for "Share Document" panel here-->
             <div class="modal fade" id="myModal4" role="dialog">

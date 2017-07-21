@@ -91,6 +91,14 @@ public class Topic {
 //    public void setResourceList(ArrayList<Resource> resourceList) {
 //        this.resourceList = resourceList;
 //    }
+
+
+    @Override
+    public String toString() {
+        return  name +
+                " (visibility: " + visibility +
+                ")\n";
+    }
 }
 
 

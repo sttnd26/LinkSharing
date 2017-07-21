@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
 //            System.out.println("length " + fileUpload.length);
         }
         else {
-            File file = new File("C:\\Users\\MAHE\\Desktop\\TTN\\LinkSharing\\src\\main\\webapp\\resources\\images\\default-img.png");
+            File file = new File("C:\\Users\\MAHE\\Desktop\\TTN\\LinkSharing\\src\\main\\webapp\\resources\\images\\default-img.jpg");
             FileInputStream fis = new FileInputStream(file);
             byte ph[] = new byte[(int) file.length()];
             fis.read(ph);
