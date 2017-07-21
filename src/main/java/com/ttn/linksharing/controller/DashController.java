@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -46,6 +47,16 @@ public class DashController {
         model.setViewName("dashboard");
         return model;
     }
+
+    @RequestMapping(value = "/displaytopics", method = RequestMethod.GET)
+     @ResponseBody
+    String displaytopics() {
+
+        String result = "Topics: "+user.getTopicList();
+
+        return result;
+    }
+
 
     @RequestMapping(value = "/logout", method=RequestMethod.GET)
         public String logout(HttpSession session) {

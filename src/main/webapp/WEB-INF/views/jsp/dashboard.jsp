@@ -71,7 +71,7 @@
                                     </td>
                                     <td>&nbsp;&nbsp;</td>
                                     <td>
-                                        <font size=2px> Topics</font>
+                                        <a href="/displaytopics" onclick="return doAjax();"><font size=2px> Topics</font></a>
 
                                     </td>
                                 </tr>
@@ -314,34 +314,6 @@
                     </div>
                 </div>
             </div>
-            <!--Coding for "Top posts" panel here-->
-            <%--send invitation--%>
-            <div class="modal fade" id="myModal2" role="dialog">
-                <div class="modal-dialog">
-
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Send Invitation</h4>
-                        </div>
-                        <div class="modal-body">
-                            Email:* <input type="text" placeholder="Email" style="position:relative;margin-left:40%;" required>
-                            <br><br>
-                            Topic:* <select style="position:relative;margin-left:40%;" required>
-                            <option>Topic</option>
-                            <option>Topic 1</option>
-                        </select>
-                            <br><br>
-                            <button type="submit" style="position:relative; margin-left:48%;">Invite</button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
 
@@ -420,8 +392,39 @@
                 </div>
             </div>
 
-            <!--Coding for "Share link" panel here-->
-            <!--Coding for "Share link" panel here-->
+
+            <!--Coding for "Share Document" panel here-->
+            <div class="modal fade" id="myModal4" role="dialog">
+                <div class="modal-dialog">
+
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Share Document</h4>
+                        </div>
+                        <div class="modal-body">
+                            Document:* <input type="file" style="position:relative;margin-left:40%;" required>
+                            <br><br>
+                            Description:* <textarea cols="22" rows=3  placeholder="Description" style="position:relative;margin-left:32%;" required></textarea>
+                            <br><br>
+                            Topic:* <select style="position:relative;margin-left:40%;" required>
+                            <option>Topic</option>
+                            <option>Topic 1</option>
+                        </select>
+                            <br><br>
+                            <button type="submit" style="position:relative; margin-left:48%;">Share</button>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!--Coding for "Share Link" panel here-->
             <div class="modal fade" id="myModal3" role="dialog">
                 <div class="modal-dialog">
 
@@ -450,29 +453,26 @@
 
                 </div>
             </div>
-            <!--Coding for "Share document" panel here-->
-            <!--Coding for "Share document" panel here-->
-            <div class="modal fade" id="myModal4" role="dialog">
+
+            <!--Coding for "Send Invitation" panel here-->
+            <div class="modal fade" id="myModal2" role="dialog">
                 <div class="modal-dialog">
 
                     <!-- Modal content-->
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h4 class="modal-title">Share Document</h4>
+                            <h4 class="modal-title">Send Invitation</h4>
                         </div>
                         <div class="modal-body">
-                            Document:* <input type="file" style="position:relative;margin-left:40%;" required>
-                            <br><br>
-                            Description:* <textarea cols="22" rows=3  placeholder="Description" style="position:relative;margin-left:32%;" required></textarea>
+                            Email:* <input type="text" placeholder="Email" style="position:relative;margin-left:40%;" required>
                             <br><br>
                             Topic:* <select style="position:relative;margin-left:40%;" required>
                             <option>Topic</option>
                             <option>Topic 1</option>
                         </select>
                             <br><br>
-                            <button type="submit" style="position:relative; margin-left:48%;">Share</button>
-
+                            <button type="submit" style="position:relative; margin-left:48%;">Invite</button>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -518,26 +518,6 @@
 </body>
 </html>
 
-
-<!-- Modal -->
-<%--<div class="modal fade" id="emailModal" role="dialog">--%>
-    <%--<div class="modal-dialog">--%>
-
-        <%--<!-- Modal content-->--%>
-        <%--<div class="modal-content">--%>
-            <%--<div class="modal-header">--%>
-                <%--<button type="button" class="close" data-dismiss="modal">&times;</button>--%>
-                <%--<h4 class="modal-title">Email</h4>--%>
-            <%--</div>--%>
-            <%--<div class="modal-body">--%>
-                <%--<p>Some text in the email.</p>--%>
-            <%--</div>--%>
-            <%--<div class="modal-footer">--%>
-                <%--<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>--%>
-            <%--</div>--%>
-        <%--</div>--%>
-    <%--</div>--%>
-<%--</div>--%>
 
 
 
