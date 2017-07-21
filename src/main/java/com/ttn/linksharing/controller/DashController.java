@@ -53,7 +53,7 @@ public class DashController {
         String displaytopics(HttpServletRequest request) {
             HttpSession session = request.getSession();
             user = (User) session.getAttribute("UserDetails");
-        String result = "<b>TOPICS: </b><br><p>"+user.getTopicList()+"</p>";
+        String result = "<b>TOPICS: </b><br><br><p>"+user.getTopicList()+"</p>";
 
         return result;
     }

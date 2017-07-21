@@ -28,7 +28,7 @@ public class User {
     private String firstName;
     @NotEmpty(message = "Required field")
     private String lastName;
-    @Transient
+
     @Lob  @Column(columnDefinition = "LONGBLOB")
     private byte[] photo;
     private Boolean isAdmin=false;
