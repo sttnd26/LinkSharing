@@ -6,6 +6,7 @@ import com.ttn.linksharing.service.TopicService;
 import com.ttn.linksharing.service.TopicServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,6 +23,12 @@ public class DashController {
     @Autowired
     private TopicServiceImpl topicService;
     private User user;
+
+    @ModelAttribute
+    void addingObject(Model model)
+    {
+        model.addAttribute("user", new User());
+    }
 
     @RequestMapping(value = "/getPhoto")
     public void getPhoto(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -43,7 +50,7 @@ public class DashController {
     @RequestMapping(value = "/logout", method=RequestMethod.GET)
         public String logout(HttpSession session) {
             session.invalidate();
-            return "redirect:/homepg";
+            return "homepg";
     }
     
 }

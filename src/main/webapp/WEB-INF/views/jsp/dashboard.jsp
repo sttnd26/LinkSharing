@@ -494,7 +494,7 @@
                         </div>
                         <div class="modal-body">
                             <form method="post" action="/createtopic">
-                                Name:* <input type="text" placeholder="Name" name="name" style="position:relative;margin-left:40%;" required>
+                                Name:* <input type="text" placeholder="Name" name="name" style="position:relative;margin-left:40%;" required >
                                 <br><br>
                                 Visibility:* <select style="position:relative;margin-left:40%;" name="visibility" required>
                                 <option>PUBLIC</option>
