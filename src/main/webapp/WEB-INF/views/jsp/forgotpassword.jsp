@@ -21,15 +21,15 @@ Enter your registered email address:
 <form action="/resetpwd" method="post" data-toggle="validator">
     <table>
         <tr>
-            <td colspan="2"><input type="text" name="email" required></td>
+            <td colspan="2"><input type="text" name="email" class="form-control" required></td>
         </tr>
         <tr>
             <td>New Password</td>
-            <td colspan="2"><input type="password" name="password" id="prevPassword"></td>
+            <td colspan="2"><input type="password" class="form-control" name="password" id="prevPassword"></td>
         </tr>
         <tr>
             <td>Confirm Password </td>
-            <td colspan="2"><input type="password" name="confirmpassword" data-match="#prevPassword" data-match-error="Password does not match">
+            <td colspan="2"><input type="password" class="form-control" name="confirmpassword" data-match="#prevPassword" data-match-error="Password does not match">
                 <div class="help-block with-errors"></div></td>
         </tr>
         <tr>
