@@ -8,6 +8,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -52,4 +54,11 @@ public class UserServiceImpl implements UserService {
         }
     }
 
+    @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
+    public void resetPwd(String mail, String pwd, HttpServletRequest request) {
+        HttpSession session = request.getSession();
+        User user=(User)session.getAttribute("UserDetails");
+//        user.setPassword(pwd);
+        userDao.updPwd(mail, pwd, user);
+    }
 }

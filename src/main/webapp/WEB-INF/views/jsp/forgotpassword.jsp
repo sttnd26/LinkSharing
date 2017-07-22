@@ -21,7 +21,7 @@ Enter your registered email address:
 <form action="/resetpwd" method="post" data-toggle="validator">
     <table>
         <tr>
-            <td colspan="2"><input type="text" name="email"></td>
+            <td colspan="2"><input type="text" name="email" required></td>
         </tr>
         <tr>
             <td>New Password</td>

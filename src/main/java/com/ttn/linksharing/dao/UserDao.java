@@ -13,4 +13,6 @@ public interface UserDao {
 
  User getUserByUsernamePassword(String name, String pwd);
 
+ void updPwd(String mail, String pwd, User user);
+
 }

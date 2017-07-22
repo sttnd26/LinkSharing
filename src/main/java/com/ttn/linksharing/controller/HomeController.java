@@ -48,9 +48,11 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/resetpwd", method = RequestMethod.POST)
-	public ModelAndView resetpwd() {
+	public ModelAndView resetpwd(@ModelAttribute User user, @RequestParam("email") String mail, @RequestParam("password") String pwd, HttpServletRequest request) {
 
 		ModelAndView modelf = new ModelAndView();
+
+		userService.resetPwd(mail, pwd, request);
 		modelf.setViewName("homepg");
 		modelf.addObject("msg","*Your password has been reset");
 
