@@ -17,5 +17,5 @@ public interface UserService {
 
     void setPicture( MultipartFile[] fileUpload, User user) throws IOException;
 
-    void resetPwd(String mail, String pwd, HttpServletRequest request);
+    int resetPwd(String mail, String pwd, HttpServletRequest request);
 }

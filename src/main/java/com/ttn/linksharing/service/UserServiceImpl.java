@@ -55,10 +55,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Transactional(propagation = Propagation.REQUIRED, readOnly = false)
-    public void resetPwd(String mail, String pwd, HttpServletRequest request) {
+    public int resetPwd(String mail, String pwd, HttpServletRequest request) {
         HttpSession session = request.getSession();
         User user=(User)session.getAttribute("UserDetails");
 //        user.setPassword(pwd);
-        userDao.updPwd(mail, pwd, user);
+        return userDao.updPwd(mail, pwd, user);
     }
 }

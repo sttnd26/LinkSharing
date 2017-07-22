@@ -34,11 +34,12 @@ public class UserDaoImpl implements UserDao {
         return (User) query.uniqueResult();
     }
 
-    public  void updPwd(String mail, String pwd, User user) {
+    public  int updPwd(String mail, String pwd, User user) {
         final Query query = ourSessionFactory.getCurrentSession().createQuery("update User set password = :passwrd where email =:elmail");
         query.setParameter("passwrd",pwd);
         query.setParameter("elmail",mail);
-        query.executeUpdate();
+       int res= query.executeUpdate();
+       return  res;
     }
 
 }

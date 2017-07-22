@@ -52,10 +52,12 @@ public class HomeController {
 
 		ModelAndView modelf = new ModelAndView();
 
-		userService.resetPwd(mail, pwd, request);
+		int result= userService.resetPwd(mail, pwd, request);
 		modelf.setViewName("homepg");
-		modelf.addObject("msg","*Your password has been reset");
-
+		if(result>0)
+		{
+			modelf.addObject("msg","*Your password has been reset successfully!");
+		}
 		return modelf;
 	}
 
