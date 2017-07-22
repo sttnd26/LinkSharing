@@ -38,6 +38,25 @@ public class HomeController {
 
 	}
 
+	@RequestMapping(value = "/forgotpwd", method = RequestMethod.GET)
+	public ModelAndView forgotpwd() {
+
+		ModelAndView modelf = new ModelAndView();
+		modelf.setViewName("forgotpassword");
+
+		return modelf;
+	}
+
+	@RequestMapping(value = "/resetpwd", method = RequestMethod.POST)
+	public ModelAndView resetpwd() {
+
+		ModelAndView modelf = new ModelAndView();
+		modelf.setViewName("homepg");
+		modelf.addObject("msg","*Your password has been reset");
+
+		return modelf;
+	}
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	ModelAndView login(@RequestParam("username") String name, @RequestParam("password") String pwd, HttpServletRequest request)  {
 
@@ -54,7 +73,7 @@ public class HomeController {
 		}
 		else {
 			modelAndView.setViewName("homepg");
-			modelAndView.addObject("errormsg","*Wrong Username/Password");
+			modelAndView.addObject("msg","*Wrong Username/Password");
 		}
 		return modelAndView;
 	}

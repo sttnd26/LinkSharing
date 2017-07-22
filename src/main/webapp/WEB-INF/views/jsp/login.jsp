@@ -21,7 +21,7 @@
             <input type="password" class="form-control" name="password" id="pwdlogin" style="border-color:black" required>
         </div>
 
-        <a href="www.gmail.com">Forgot Password</a>
+        <a href="/forgotpwd">Forgot Password</a>
         <input type="submit" class="btn" style="border-color: #333;" value="Login"/>
     </form>
 </div>

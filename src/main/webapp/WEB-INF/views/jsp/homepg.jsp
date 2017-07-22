@@ -37,7 +37,7 @@
 
 
 <br>
-<h5 style="color: red">${errormsg}</h5>
+<h5 style="color: red">${msg}</h5>
 <br>
 
 
